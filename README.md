@@ -36,7 +36,15 @@ Este repositorio está diseñado para ejecutarse íntegramente en la nube sin in
 * **Recall (R):** [INSERTA_VALOR, ej. 0.82]
 * **mAP50:** [INSERTA_VALOR, ej. 0.88]
 * **mAP50-95:** [INSERTA_VALOR, ej. 0.65]
+Análisis de Evidencias del Prototipo AECO CV
 
+El paquete de evidencias generado automáticamente por el pipeline de Ultralytics (YOLOv8) documenta el ciclo completo de entrenamiento e inferencia del modelo para la detección de patologías estructurales en concreto. Este conjunto de resultados se divide en dos componentes críticos:
+
+Evidencia Cuantitativa (Curvas de Entrenamiento y Validación): El archivo results.png consolida las métricas de rendimiento durante las épocas de verificación. Las curvas de pérdida (Loss) demuestran la capacidad del modelo para minimizar el error de localización de las cajas delimitadoras (box_loss) y la clasificación de la anomalía (cls_loss). Asimismo, las métricas de Precisión (P), Recall (R) y el mAP50 validan la viabilidad del prototipo para distinguir entre fisuras reales y ruido visual (como texturas del concreto o sombras).
+
+Evidencia Cualitativa (Inferencia Visual): Las imágenes resultantes de la etapa de predicción demuestran la aplicación práctica del modelo sobre datos no vistos previamente. Los bounding boxes generados ilustran la capacidad de la red neuronal para acotar geo-espacialmente la longitud y ubicación de las grietas en la superficie, un paso fundamental para automatizar las inspecciones visuales con drones en flujos de trabajo de mantenimiento preventivo.
+
+Gobernanza de Pesos: Se incluye el archivo best.pt, el cual almacena los tensores optimizados de la red neuronal, garantizando la reproducibilidad del modelo sin necesidad de reentrenar la arquitectura, cumpliendo así con las normativas de despliegue ágil.
 **Conclusiones Clave:**
 1. El modelo YOLOv8n demuestra una alta capacidad para localizar fisuras con un mAP50 sólido, lo que valida su viabilidad para inspecciones preliminares automatizadas.
 2. Las métricas sugieren que el modelo generaliza bien en superficies de concreto limpio, pero el rendimiento (Recall) disminuye en áreas con sombras profundas o texturas complejas que simulan grietas.

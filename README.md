@@ -6,7 +6,7 @@
 
 ## 2. Referencia del Dataset
 * **Fuente:** Roboflow Universe - Dataset de Detección de Fisuras en Concreto (Concrete Crack Detection).
-* **Enlace al Dataset:** [INSERTA_AQUI_EL_ENLACE_A_TU_DATASET_DE_ROBOFLOW]
+* **Enlace al Dataset:** [concrete-crack-detection-y2y5r-nbyio]
 * **Split de Datos:** 80% Entrenamiento / 20% Validación.
 * **Clases y Reglas de Etiquetado:**
   * `fisura`: Se etiquetan mediante *bounding boxes* (cajas delimitadoras) que engloban la longitud visible de la grieta en la superficie de concreto, excluyendo intencionalmente juntas de dilatación constructivas.
@@ -21,7 +21,7 @@ Este repositorio está diseñado para ejecutarse íntegramente en la nube sin in
   * Batch Size: 16
   * Image Size (imgsz): 640
 * **Dependencias Core:** `ultralytics==8.1.0`, `roboflow` (verificable vía `!pip freeze` en el notebook).
-* **Nota de Prueba:** Última ejecución exitosa confirmada el [INSERTA_FECHA_DE_HOY]. Rango de tiempo de ejecución estimado (entrenamiento completo): 15-25 minutos.
+* **Nota de Prueba:** Última ejecución exitosa confirmada el 15 de marzo de 2026. Rango de tiempo de ejecución estimado (entrenamiento completo): 15-25 minutos.
 
 ## 4. Cómo Reproducir (Paso a Paso)
 1. Abrir el notebook interactivo en Google Colab: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]([INSERTA_AQUI_LA_URL_DE_TU_NOTEBOOK_EN_GITHUB])
@@ -32,10 +32,15 @@ Este repositorio está diseñado para ejecutarse íntegramente en la nube sin in
 6. (Opcional para inferencia rápida): Si solo deseas probar el modelo sin entrenar, omite la Celda 4, descarga los pesos entrenados desde [INSERTA_AQUI_ENLACE_A_TUS_PESOS_BEST.PT_EN_DRIVE_O_GITHUB_RELEASES] y ejecuta la **Celda 6** de Inferencia.
 
 ## 5. Resumen de Resultados
-* **Precisión (P):** [INSERTA_VALOR, ej. 0.85]
-* **Recall (R):** [INSERTA_VALOR, ej. 0.82]
-* **mAP50:** [INSERTA_VALOR, ej. 0.88]
-* **mAP50-95:** [INSERTA_VALOR, ej. 0.65]
+                epoch,         train/box_loss,         train/cls_loss,         train/dfl_loss,   metrics/precision(B),      metrics/recall(B),       metrics/mAP50(B),    metrics/mAP50-95(B),           val/box_loss,           val/cls_loss,           val/dfl_loss,                 lr/pg0,                 lr/pg1,                 lr/pg2
+                      1,                 1.6887,                 2.4789,                 1.5106,                0.17231,                0.32702,                 0.1536,                0.05193,                 1.9739,                 2.9424,                  1.762,             0.00064815,             0.00064815,             0.00064815
+                      2,                 1.6198,                 2.0165,                  1.444,                0.28589,                0.24521,                0.17074,                0.07152,                 2.0316,                  2.742,                 1.9084,              0.0010545,              0.0010545,              0.0010545
+                      3,                 1.6809,                 1.9819,                 1.4613,                0.21434,                0.29885,                0.13719,                0.05856,                 2.1617,                 4.6796,                 2.1203,              0.0011968,              0.0011968,              0.0011968
+                      4,                  1.603,                 1.9257,                  1.442,                0.34004,                0.35632,                0.26122,                0.11466,                 1.8833,                 3.4977,                 1.6899,               0.000812,               0.000812,               0.000812
+                      5,                 1.6138,                 1.8004,                 1.4174,                0.35827,                0.36782,                0.28877,                0.13438,                  1.898,                 2.5965,                 1.6578,               0.000812,               0.000812,               0.000812
+
+                      
+
 Análisis de Evidencias del Prototipo AECO CV
 
 El paquete de evidencias generado automáticamente por el pipeline de Ultralytics (YOLOv8) documenta el ciclo completo de entrenamiento e inferencia del modelo para la detección de patologías estructurales en concreto. Este conjunto de resultados se divide en dos componentes críticos:

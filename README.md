@@ -24,12 +24,12 @@ Este repositorio está diseñado para ejecutarse íntegramente en la nube sin in
 * **Nota de Prueba:** Última ejecución exitosa confirmada el 15 de marzo de 2026. Rango de tiempo de ejecución estimado (entrenamiento completo): 15-25 minutos.
 
 ## 4. Cómo Reproducir (Paso a Paso)
-1. Abrir el notebook interactivo en Google Colab: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]([INSERTA_AQUI_LA_URL_DE_TU_NOTEBOOK_EN_GITHUB])
+1. Abrir el notebook interactivo en Google Colab: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1kMl5z73ayjTyHh7kWkRurVtZXkMGdFBl#scrollTo=VcFXLKn1tam6))
 2. En la barra superior de Colab, ir a `Entorno de ejecución` > `Cambiar tipo de entorno de ejecución` y seleccionar **T4 GPU**.
 3. Ejecutar la **Celda 2** para instalar las dependencias necesarias (`ultralytics` y `roboflow`).
 4. En la **Celda 3**, asegúrate de que el fragmento de código contenga la API Key correcta de Roboflow para descargar el dataset.
 5. Ejecutar la celda de Entrenamiento (**Celda 4**). Esto iniciará el proceso de 30 épocas.
-6. (Opcional para inferencia rápida): Si solo deseas probar el modelo sin entrenar, omite la Celda 4, descarga los pesos entrenados desde [INSERTA_AQUI_ENLACE_A_TUS_PESOS_BEST.PT_EN_DRIVE_O_GITHUB_RELEASES] y ejecuta la **Celda 6** de Inferencia.
+6. (Opcional para inferencia rápida): Si solo deseas probar el modelo sin entrenar, omite la Celda 4, descarga los pesos entrenados desde [](https://drive.google.com/drive/folders/1tQX4AfhgMh17lv2qBjJt8mRRwazjT0w-?usp=sharing)] y ejecuta la **Celda 6** de Inferencia.
 
 ## 5. Resumen de Resultados
                 epoch,         train/box_loss,         train/cls_loss,         train/dfl_loss,   metrics/precision(B),      metrics/recall(B),       metrics/mAP50(B),    metrics/mAP50-95(B),           val/box_loss,           val/cls_loss,           val/dfl_loss,                 lr/pg0,                 lr/pg1,                 lr/pg2
